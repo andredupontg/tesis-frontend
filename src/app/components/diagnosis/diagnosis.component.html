@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Cough</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="cough">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -11,7 +11,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Fever</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="fever">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -19,7 +19,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Sore Throat</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="soreThroat">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -27,7 +27,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Shortness of Breath</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="shortnessOfBreath">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -35,7 +35,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Headache</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="headache">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -43,7 +43,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Age Group</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="ageGroup">
                     <option selected>Choose...</option>
                     <option value="1">>=60</option>
                     <option value="0"><60</option>
@@ -51,7 +51,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Gender</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="gender">
                     <option selected>Choose...</option>
                     <option value="1">Male</option>
                     <option value="0">Female</option>
@@ -59,14 +59,14 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Contact with confirmed case</span>
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="contactWithConfirmedCase">
                     <option selected>Choose...</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                   </select>                
             </div>
             <div class="d-grid gap-2">
-                <button type="button" class="btn btn-outline-dark">Check</button>
+                <button (click)="diagnoseCovid()" type="button" class="btn btn-outline-dark">Check</button>
             </div>
         </div>
     </div>

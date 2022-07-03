@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DiagnosisService {
   private BASE_URL = "http://localhost:8080";
   constructor(private http:HttpClient) {};
-  getResults(symptom: String): Observable<any> {
-    return this.http.post(`${this.BASE_URL}/getResults`, symptom);
+  getResults(symptoms: JSON): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/getResults`, symptoms);
   }
 }
