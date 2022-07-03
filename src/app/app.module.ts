@@ -6,6 +6,8 @@ import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TitleComponent } from './components/title/title.component';
+import {HttpClientModule} from '@angular/common/http';
+import { DiagnosisService } from './services/diagnosis.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { TitleComponent } from './components/title/title.component';
     TitleComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DiagnosisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
