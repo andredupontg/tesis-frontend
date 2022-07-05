@@ -25,7 +25,6 @@ export class DiagnosisComponent implements OnInit {
   ngOnInit(): void {this.loadedResult = false}
 
   public diagnoseCovid() {
-    
     this.cough = Number((document.getElementById("cough") as HTMLInputElement).value);
     this.fever = Number((document.getElementById("fever") as HTMLInputElement).value);
     this.soreThroat = Number((document.getElementById("soreThroat") as HTMLInputElement).value);
