@@ -15,9 +15,9 @@ export class DiagnosisComponent implements OnInit {
   soreThroat: Number | null = null;
   shortnessOfBreath: Number | null = null;
   headache: Number | null = null;
-  ageGroup: Number | null = null;
-  gender: Number | null = null;
-  contactWithConfirmedCase: Number | null = null;
+  ageGroup: String | null = null;
+  gender: String | null = null;
+  contactWithConfirmedCase: String | null = null;
   symptoms: any;
   
   constructor(private diagnosisService: DiagnosisService) {}
@@ -30,23 +30,24 @@ export class DiagnosisComponent implements OnInit {
     this.soreThroat = Number((document.getElementById("soreThroat") as HTMLInputElement).value);
     this.shortnessOfBreath = Number((document.getElementById("shortnessOfBreath") as HTMLInputElement).value);
     this.headache = Number((document.getElementById("headache") as HTMLInputElement).value);
-    this.ageGroup = Number((document.getElementById("ageGroup") as HTMLInputElement).value);
-    this.gender = Number((document.getElementById("gender") as HTMLInputElement).value);
-    this.contactWithConfirmedCase = Number((document.getElementById("contactWithConfirmedCase") as HTMLInputElement).value);
+    this.ageGroup = (document.getElementById("ageGroup") as HTMLInputElement).value;
+    this.gender = (document.getElementById("gender") as HTMLInputElement).value;
+    this.contactWithConfirmedCase = (document.getElementById("contactWithConfirmedCase") as HTMLInputElement).value;
     this.loadedResult = false;
     this.symptoms = {
       "cough": this.cough,
       "fever": this.fever,
-      "soreThroat": this.soreThroat,
-      "shortnessOfBreath": this.shortnessOfBreath,
-      "headache": this.headache,
-      "ageGroup": this.ageGroup,
+      "sore_throat": this.soreThroat,
+      "shortness_of_breath": this.shortnessOfBreath,
+      "head_ache": this.headache,
+      "age_60_and_above": this.ageGroup,
       "gender": this.gender,
-      "contactWithConfirmedCase": this.contactWithConfirmedCase
+      "test_indication": this.contactWithConfirmedCase
     }
     this.diagnosisService.getResults(<JSON>this.symptoms).subscribe(
       data => {
         this.covidResult = data;
+        console.log(data);
         this.loadedResult = true;
       },
       error => console.log(error)
