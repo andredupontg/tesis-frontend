@@ -79,8 +79,12 @@ export class DiagnosisComponent implements OnInit {
     }
     this.diagnosisService.getResults(<JSON>this.symptoms).subscribe(
       data => {
-        this.covidResult = data;
-        console.log(data);
+        if (data == "1") {
+          this.covidResult = true;
+        }
+        if (data == "0") {
+          this.covidResult = false;
+        }
         this.loadedResult = true;
       },
       error => console.log(error)

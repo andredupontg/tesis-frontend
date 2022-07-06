@@ -72,3 +72,6 @@
     </div>
 </div>
 
+<img *ngIf="this.loadedResult == true && this.covidResult == false" class="covid-result" src="../../../assets/img/happy.png" alt="negative">
+<img *ngIf="this.loadedResult == true && this.covidResult == true" class="covid-result" src="../../../assets/img/sad.png" alt="positive">
+
