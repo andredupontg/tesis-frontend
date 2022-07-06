@@ -65,17 +65,17 @@ export class DiagnosisComponent implements OnInit {
     }
     this.loadedResult = false;
     this.symptoms = {
-      "cough": this.cough,
-      "fever": this.fever,
-      "sore_throat": this.soreThroat,
-      "shortness_of_breath": this.shortnessOfBreath,
-      "head_ache": this.headache,
-      "Age 60 At Least_No": this.ageGroupNo,
-      "Age 60 At Least_Yes": this.ageGroupYes,
-      "Gender_female": this.genderNo,
-      "Gender_male": this.genderYes,
-      "Test Indication_Contact with confirmed": this.contactWithConfirmedCaseYes,
-      "Test Indication_No contact": this.contactWithConfirmedCaseNo
+      "cough": [this.cough],
+      "fever": [this.fever],
+      "sore_throat": [this.soreThroat],
+      "shortness_of_breath": [this.shortnessOfBreath],
+      "head_ache": [this.headache],
+      "Age 60 At Least_No": [this.ageGroupNo],
+      "Age 60 At Least_Yes": [this.ageGroupYes],
+      "Gender_female": [this.genderNo],
+      "Gender_male": [this.genderYes],
+      "Test Indication_Contact with confirmed": [this.contactWithConfirmedCaseYes],
+      "Test Indication_No contact": [this.contactWithConfirmedCaseNo]
     }
     this.diagnosisService.getResults(<JSON>this.symptoms).subscribe(
       data => {
