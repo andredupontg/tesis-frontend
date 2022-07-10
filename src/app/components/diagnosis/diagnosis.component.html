@@ -1,4 +1,4 @@
-<div class="container-fluid diagnosis">
+<div class="container-fluid diagnosis" *ngIf="this.loadedResult == false">
     <div class="card center" style="width: 30%;">
         <div class="card-body">
             <div class="input-group mb-3">
@@ -72,6 +72,16 @@
     </div>
 </div>
 
-<img *ngIf="this.loadedResult == true && this.covidResult == false" class="covid-result" src="../../../assets/img/happy.png" alt="negative">
-<img *ngIf="this.loadedResult == true && this.covidResult == true" class="covid-result" src="../../../assets/img/sad.png" alt="positive">
+<div class="p-5 mb-4 bg-light rounded-3" *ngIf="this.loadedResult == true">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Results</h1>
+      <p class="col-md-8 fs-4"> With 92% accuracy your covid test result = {{this.covidResult}}.
+        <img *ngIf="this.covidResult == false" class="covid-result" src="../../../assets/img/happy.png" alt="negative">
+        <img *ngIf="this.covidResult == true" class="covid-result" src="../../../assets/img/sad.png" alt="positive">
+      </p>
+    </div>
+</div>
+
+
+
 
